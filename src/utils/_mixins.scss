@@ -1,0 +1,10 @@
+@mixin grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+@mixin default-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
