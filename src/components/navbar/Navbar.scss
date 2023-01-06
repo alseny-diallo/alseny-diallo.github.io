@@ -1,0 +1,70 @@
+@use '../../utils/variables' as v;
+$header-height: 3rem;
+
+@mixin position-fixed {
+  position: fixed;
+  left: 0;
+}
+.header {
+  width: 100%;
+  @include position-fixed;
+  bottom: 0;
+  box-shadow: 0 -1px 4px rgba($color: #000000, $alpha: 0.15);
+  z-index: 999;
+}
+.nav {
+  height: $header-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__logo,
+  &__toggle {
+    font-weight: v.$font-medium;
+    color: v.$title-color;
+  }
+
+  &__toggle,
+  &__close {
+    background-color: transparent;
+    border: none;
+    font-size: 1.5rem;
+    color: v.$color-primary;
+    cursor: pointer;
+    &:hover {
+      color: #857dec;
+    }
+  }
+  &__list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 0;
+  }
+  &__menu {
+    @include position-fixed;
+    bottom: -100%;
+    width: 100%;
+    padding: 2rem 1.5rem 4rem;
+    background-color: v.$body-color;
+    transition: 0.3s;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: v.$small-font-size;
+    font-weight: v.$font-medium;
+    color: v.$title-color;
+  }
+  &__icon {
+    font-size: 1.2rem;
+  }
+  &__close {
+    position: absolute;
+    right: 1.3rem;
+    bottom: 0.5rem;
+  }
+  .active {
+    bottom: 0;
+  }
+}
