@@ -1,3 +1,5 @@
+@use './utils/variables' as v;
+
 /*===== BASE =====*/
 *,
 ::before,
@@ -28,11 +30,38 @@ ul {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: v.$body-font;
+  font-size: v.$normal-font-size;
 }
 
 img {
   display: block;
   height: auto;
   max-width: 100%;
+}
+/*===== REUSABLE CLASSES =====*/
+.section {
+  padding: 2rem 0 4rem;
+  &__title {
+    font-size: v.$h1-font-size;
+  }
+  &__subtitle {
+    display: block;
+    font-size: v.$small-font-size;
+    margin-bottom: 3rem;
+  }
+  &__title,
+  &__subtitle {
+    text-align: center;
+  }
+}
+/*===== LAYOUT =====*/
+.container {
+  max-width: 48rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+.grid {
+  display: grid;
+  gap: 1.5rem;
 }
