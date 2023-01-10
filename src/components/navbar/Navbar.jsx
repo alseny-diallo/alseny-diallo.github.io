@@ -75,7 +75,7 @@ function Navbar() {
           Al Seny
         </a>
         <div className="nav__menu">
-          <ul className="nav__list grid">
+          <ul className="nav__list">
             {itemsList.map((item, index) => (
               <ItemsList
                 key={index}
