@@ -58,6 +58,9 @@ $header-height: 3rem;
     font-size: v.$small-font-size;
     font-weight: v.$font-medium;
     color: v.$title-color;
+    &:hover {
+      color: v.$color-secondary;
+    }
   }
   &__icon {
     font-size: 1.2rem;
@@ -71,7 +74,7 @@ $header-height: 3rem;
     bottom: 0;
   }
 }
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 768px) {
   .header {
     top: 0;
     bottom: initial;
@@ -81,7 +84,7 @@ $header-height: 3rem;
     margin: 0;
     column-gap: 1rem;
     &__logo {
-      font-size: v.$h2-font-size;
+      font-size: 1.25rem;
       font-weight: v.$font-medium;
     }
     &__menu {
@@ -89,9 +92,9 @@ $header-height: 3rem;
     }
     &__list {
       display: flex;
-      column-gap: 3rem;
     }
     &__link {
+      font-weight: normal;
       font-size: 1rem;
     }
     &__icon,
@@ -99,5 +102,10 @@ $header-height: 3rem;
     &__close {
       display: none;
     }
+  }
+}
+@media screen and (min-width: 832px) {
+  .nav__list {
+    column-gap: 3rem;
   }
 }
