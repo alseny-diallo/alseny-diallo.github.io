@@ -1,0 +1,86 @@
+@import "tailwindcss";
+
+/* Le mode sombre s'active avec la classe .dark sur <html> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Couleurs du thème : elles changent automatiquement entre clair et sombre */
+:root {
+  --bg: #f7f7f2;
+  --fg: #0c0c12;        /* titres */
+  --text: #3f3f46;      /* texte principal */
+  --muted: #52525b;     /* texte secondaire */
+  --subtle: #71717a;    /* petites infos */
+  --line: rgb(12 12 18 / 0.1);
+  --card: rgb(255 255 255 / 0.7);
+  --chip: rgb(12 12 18 / 0.04);
+  --accent: #65a30d;
+  --accent-2: #0891b2;
+  --accent-3: #84cc16;
+  --grid: rgb(12 12 18 / 0.05);
+  color-scheme: light;
+}
+
+.dark {
+  --bg: #0a0a0f;
+  --fg: #ffffff;
+  --text: #d4d4d8;
+  --muted: #a1a1aa;
+  --subtle: #71717a;
+  --line: rgb(255 255 255 / 0.1);
+  --card: rgb(255 255 255 / 0.03);
+  --chip: rgb(255 255 255 / 0.05);
+  --accent: #a3e635;
+  --accent-2: #22d3ee;
+  --accent-3: #d9f99d;
+  --grid: rgb(255 255 255 / 0.04);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-ink: #0a0a0f;
+  --color-bg: var(--bg);
+  --color-fg: var(--fg);
+  --color-text: var(--text);
+  --color-muted: var(--muted);
+  --color-subtle: var(--subtle);
+  --color-line: var(--line);
+  --color-card: var(--card);
+  --color-chip: var(--chip);
+  --color-accent: var(--accent);
+  --color-accent-2: var(--accent-2);
+  --color-accent-3: var(--accent-3);
+}
+
+body {
+  @apply bg-bg text-text font-sans antialiased transition-colors duration-300;
+}
+
+::selection {
+  @apply bg-accent text-ink;
+}
+
+/* Grille de fond subtile */
+.bg-grid {
+  background-image:
+    linear-gradient(to right, var(--grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
+}
+
+/* Apparition au scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
