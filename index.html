@@ -1,19 +1,19 @@
 <!doctype html>
-<html lang="fr" class="scroll-smooth dark">
+<html lang="en" class="scroll-smooth dark">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio d’Al Seny Diallo, ingénieur logiciel Full-Stack à Dakar : React, Next.js, NestJS, Node.js, PostgreSQL." />
+    <meta name="description" content="Portfolio of Al Seny Diallo, Full-Stack software engineer based in Dakar: React, Next.js, NestJS, Node.js, PostgreSQL." />
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
-    <title>Al Seny Diallo — Ingénieur logiciel Full-Stack</title>
+    <title>Al Seny Diallo — Full-Stack Software Engineer</title>
     <script>
-      // Applique le thème avant l'affichage pour éviter un flash
+      // Apply the theme before first paint to avoid a flash (same logic as src/hooks/useTheme.js)
       try {
         var t = localStorage.getItem('theme')
-        if (!t) t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
+        if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark'
         document.documentElement.classList.toggle('dark', t === 'dark')
       } catch (e) {}
     </script>

@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "description": "Portfolio d’Al Seny Diallo, ingénieur logiciel Full-Stack à Dakar : React, Next.js, NestJS, Node.js, PostgreSQL."
+  },
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "projects": "Projets",
+    "experience": "Parcours",
+    "contact": "Contact",
+    "contactMe": "Me contacter",
+    "openMenu": "Ouvrir le menu",
+    "closeMenu": "Fermer le menu"
+  },
+  "settings": {
+    "switchLang": "Switch to English",
+    "toLight": "Passer au thème clair",
+    "toDark": "Passer au thème sombre"
+  },
+  "common": {
+    "present": "Aujourd’hui"
+  },
+  "hero": {
+    "role": "Ingénieur logiciel Full-Stack",
+    "location": "Dakar, Sénégal",
+    "tagline": "Je conçois et développe des applications web robustes — API NestJS, interfaces React — avec une vraie exigence de qualité et de maintenabilité.",
+    "available": "Disponible pour de nouveaux projets",
+    "seeProjects": "Voir mes projets",
+    "downloadCv": "Télécharger mon CV",
+    "scrollDown": "Défiler vers le bas"
+  },
+  "about": {
+    "paragraphs": [
+      "Développeur Full-Stack avec plus de 4 ans d'expérience, je conçois, développe et intègre des API REST avec NestJS, Node.js et PostgreSQL, et des interfaces modernes avec React et Next.js.",
+      "Chez Quadra Afrique de l'Ouest, j'ai piloté la migration du cœur backend de KOOB, une plateforme SaaS de réservation touristique, de Ruby on Rails vers NestJS, et intégré des API partenaires comme STAAH et Koedia.",
+      "J'attache une grande importance à la qualité du code — Clean Architecture, DDD, CQRS, tests, Docker — et j'aime transmettre : j'anime les cérémonies Scrum et j'accompagne stagiaires et nouveaux développeurs."
+    ],
+    "stats": {
+      "experience": {
+        "label": "années d'expérience"
+      },
+      "companies": {
+        "label": "entreprises, dont Sonatel (Orange)"
+      },
+      "degree": {
+        "value": "Bac+5",
+        "label": "Master en Génie Logiciel"
+      }
+    }
+  },
+  "skills": {
+    "groups": {
+      "frontend": "Langages & Front-end",
+      "backend": "Back-end & données",
+      "quality": "Architecture & qualité",
+      "tools": "Outils & méthodes"
+    }
+  },
+  "projects": {
+    "sourceCode": "Code de {{title}}",
+    "visit": "Voir {{title}}",
+    "items": {
+      "koob": {
+        "title": "KOOB",
+        "context": "Quadra Afrique de l'Ouest",
+        "description": "Plateforme SaaS de réintermédiation touristique qui connecte producteurs de voyage, tours-opérateurs et agences pour la réservation instantanée. Migration du backend Ruby on Rails vers NestJS, intégration des API STAAH et Koedia."
+      },
+      "orange": {
+        "title": "Back-office boutique Orange",
+        "context": "Sonatel",
+        "description": "Outil interne de gestion des produits, du stock, des commandes et des paiements, avec tableau de bord analytique — en remplacement de l'ancienne plateforme."
+      },
+      "blazor": {
+        "title": "Documentation Blazor Foundation 6",
+        "context": "OpenCodeDev — Canada (remote)",
+        "description": "Site de documentation de la bibliothèque de composants Blazor Foundation 6 (v3), compatible .NET Core 6, avec composants réutilisables : coloration syntaxique, modales, copie en un clic."
+      }
+    }
+  },
+  "experience": {
+    "items": {
+      "quadra": {
+        "title": "Développeur Full-Stack",
+        "company": "Quadra Afrique de l'Ouest",
+        "description": "Migration du module central de Ruby on Rails vers NestJS / Node.js 22, refonte du front React (Zustand), optimisation des performances (MikroORM, Redis, BullMQ), revues de code, animation Scrum et encadrement de stagiaires."
+      },
+      "sonatel": {
+        "title": "Développeur Front-End",
+        "company": "Sonatel (Orange)",
+        "description": "Nouvelles fonctionnalités du back-office de la boutique en ligne Orange avec Next.js et interfaces ergonomiques pour les équipes métiers, en environnement Agile."
+      },
+      "opencodedev": {
+        "title": "Développeur Front-End",
+        "company": "OpenCodeDev, Québec (remote)",
+        "description": "Site de documentation Blazor Foundation 6, composants et plugins C# réutilisables, en full remote (Kanban, eXtreme Programming)."
+      }
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "items": {
+      "master": "Master en Génie Logiciel",
+      "bachelor": "Licence en Génie Logiciel et Systèmes d'Information",
+      "dst": "DST en Informatique"
+    }
+  },
+  "spokenLanguages": {
+    "title": "Langues",
+    "entry": "{{name}} ({{level}})",
+    "names": {
+      "fr": "Français",
+      "wo": "Wolof",
+      "en": "Anglais"
+    },
+    "levels": {
+      "fluent": "courant",
+      "professional": "professionnel"
+    }
+  },
+  "contact": {
+    "title": "Travaillons ensemble.",
+    "text": "Un projet, une opportunité ou simplement envie d'échanger ? Ma boîte mail est toujours ouverte.",
+    "copy": "Copier",
+    "copied": "Copié !",
+    "copyEmail": "Copier l'adresse email"
+  }
+}

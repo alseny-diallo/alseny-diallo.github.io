@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "description": "Portfolio of Al Seny Diallo, Full-Stack software engineer based in Dakar: React, Next.js, NestJS, Node.js, PostgreSQL."
+  },
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "projects": "Projects",
+    "experience": "Experience",
+    "contact": "Contact",
+    "contactMe": "Contact me",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "settings": {
+    "switchLang": "Passer en français",
+    "toLight": "Switch to light theme",
+    "toDark": "Switch to dark theme"
+  },
+  "common": {
+    "present": "Present"
+  },
+  "hero": {
+    "role": "Full-Stack Software Engineer",
+    "location": "Dakar, Senegal",
+    "tagline": "I design and build robust web applications — NestJS APIs, React interfaces — with a strong focus on quality and maintainability.",
+    "available": "Available for new projects",
+    "seeProjects": "See my projects",
+    "downloadCv": "Download my resume",
+    "scrollDown": "Scroll down"
+  },
+  "about": {
+    "paragraphs": [
+      "Full-Stack developer with 4+ years of experience, I design, build and integrate REST APIs with NestJS, Node.js and PostgreSQL, and modern interfaces with React and Next.js.",
+      "At Quadra West Africa, I led the migration of KOOB's core backend — a SaaS travel booking platform — from Ruby on Rails to NestJS, and integrated partner APIs such as STAAH and Koedia.",
+      "I care deeply about code quality — Clean Architecture, DDD, CQRS, testing, Docker — and I enjoy sharing knowledge: I facilitate Scrum ceremonies and mentor interns and new developers."
+    ],
+    "stats": {
+      "experience": {
+        "label": "years of experience"
+      },
+      "companies": {
+        "label": "companies, including Sonatel (Orange)"
+      },
+      "degree": {
+        "value": "MSc",
+        "label": "in Software Engineering"
+      }
+    }
+  },
+  "skills": {
+    "groups": {
+      "frontend": "Languages & Front-end",
+      "backend": "Back-end & data",
+      "quality": "Architecture & quality",
+      "tools": "Tools & methods"
+    }
+  },
+  "projects": {
+    "sourceCode": "Source code of {{title}}",
+    "visit": "Visit {{title}}",
+    "items": {
+      "koob": {
+        "title": "KOOB",
+        "context": "Quadra West Africa",
+        "description": "SaaS travel re-intermediation platform connecting travel producers, tour operators and agencies for instant booking. Migrated the backend from Ruby on Rails to NestJS and integrated the STAAH and Koedia APIs."
+      },
+      "orange": {
+        "title": "Orange online store back-office",
+        "context": "Sonatel",
+        "description": "Internal tool to manage products, stock, orders and payments, with an analytics dashboard — replacing the previous platform."
+      },
+      "blazor": {
+        "title": "Blazor Foundation 6 documentation",
+        "context": "OpenCodeDev — Canada (remote)",
+        "description": "Documentation website for the Blazor Foundation 6 (v3) component library, compatible with .NET Core 6, with reusable components: syntax highlighting, modals, one-click copy."
+      }
+    }
+  },
+  "experience": {
+    "items": {
+      "quadra": {
+        "title": "Full-Stack Developer",
+        "company": "Quadra West Africa",
+        "description": "Migrated the core module from Ruby on Rails to NestJS / Node.js 22, rebuilt the React front-end (Zustand), improved performance (MikroORM, Redis, BullMQ), led code reviews and Scrum ceremonies, and mentored interns."
+      },
+      "sonatel": {
+        "title": "Front-End Developer",
+        "company": "Sonatel (Orange)",
+        "description": "Built new features for the Orange online store back-office with Next.js and designed user-friendly interfaces for business teams, in an Agile environment."
+      },
+      "opencodedev": {
+        "title": "Front-End Developer",
+        "company": "OpenCodeDev, Québec (remote)",
+        "description": "Blazor Foundation 6 documentation website, reusable C# components and plugins, fully remote (Kanban, eXtreme Programming)."
+      }
+    }
+  },
+  "education": {
+    "title": "Education",
+    "items": {
+      "master": "Master's in Software Engineering",
+      "bachelor": "Bachelor's in Software Engineering & Information Systems",
+      "dst": "Higher Technology Diploma (DST) in Computer Science"
+    }
+  },
+  "spokenLanguages": {
+    "title": "Languages",
+    "entry": "{{name}} ({{level}})",
+    "names": {
+      "fr": "French",
+      "wo": "Wolof",
+      "en": "English"
+    },
+    "levels": {
+      "fluent": "fluent",
+      "professional": "professional"
+    }
+  },
+  "contact": {
+    "title": "Let's work together.",
+    "text": "A project, an opportunity, or just want to chat? My inbox is always open.",
+    "copy": "Copy",
+    "copied": "Copied!",
+    "copyEmail": "Copy email address"
+  }
+}
