@@ -53,9 +53,13 @@ export const profile = {
     {
       id: 'koob',
       tags: ['NestJS', 'React', 'PostgreSQL', 'Docker', 'DDD', 'CQRS'],
-      link: 'https://discover.koob.tech',
+      link: 'https://discover.koob.tech/',
     },
-    { id: 'orange', tags: ['Next.js', 'Drupal', 'Gitflow', 'Scrum'] },
+    {
+      id: 'orange',
+      tags: ['Next.js', 'Drupal', 'Gitflow', 'Scrum'],
+      link: 'https://boutique.orange.sn/',
+    },
     {
       id: 'blazor',
       tags: ['Blazor', 'C#', '.NET Core 6'],
