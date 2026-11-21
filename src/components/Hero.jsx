@@ -1,15 +1,15 @@
+import { useTranslation } from 'react-i18next'
 import { ArrowDown, ArrowUpRight, Download, MapPin } from 'lucide-react'
-import { useSettings } from '../settings'
-import { GithubIcon, LinkedinIcon } from './icons'
+import { profile } from '../data/profile'
+import { sections } from '../sections'
+import SocialLinks from './SocialLinks'
+
+const words = profile.name.split(' ')
+const lastName = words.pop()
+const firstName = words.join(' ')
 
 export default function Hero() {
-  const { data, t } = useSettings()
-  const words = data.name.split(' ')
-  const last = words.pop()
-  const first = words.join(' ')
-
-  const iconBtn =
-    'rounded-full border border-line p-3 text-muted transition hover:border-fg/30 hover:text-fg'
+  const { t } = useTranslation()
 
   return (
     <section id="top" className="relative flex min-h-svh items-center overflow-hidden pt-16">
@@ -19,60 +19,55 @@ export default function Hero() {
 
       <div className="relative mx-auto w-full max-w-6xl px-6 py-24">
         <div className="mb-8 flex flex-wrap items-center gap-3 text-sm">
-          {data.available && (
+          {profile.available && (
             <span className="inline-flex items-center gap-2 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-accent">
               <span className="relative flex h-2 w-2">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-accent" />
               </span>
-              {t.available}
+              {t('hero.available')}
             </span>
           )}
           <span className="inline-flex items-center gap-1.5 text-subtle">
-            <MapPin size={14} /> {data.location}
+            <MapPin size={14} /> {t('hero.location')}
           </span>
         </div>
 
         <h1 className="font-display text-5xl leading-[0.95] font-bold tracking-tight text-fg sm:text-7xl lg:text-8xl">
-          {first}
+          {firstName}
           <br />
           <span className="bg-gradient-to-r from-accent via-accent-3 to-accent-2 bg-clip-text text-transparent">
-            {last}
+            {lastName}
           </span>
         </h1>
 
-        <p className="mt-6 font-display text-xl text-fg sm:text-2xl">{data.role}</p>
-        <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{data.tagline}</p>
+        <p className="mt-6 font-display text-xl text-fg sm:text-2xl">{t('hero.role')}</p>
+        <p className="mt-4 max-w-xl text-lg leading-relaxed text-muted">{t('hero.tagline')}</p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
             href="#projects"
             className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 font-medium text-ink transition hover:shadow-[0_0_40px_-5px] hover:shadow-accent/60"
           >
-            {t.seeProjects}
+            {t('hero.seeProjects')}
             <ArrowUpRight size={18} className="transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
-          {data.cv && (
+          {profile.cv && (
             <a
-              href={data.cv}
+              href={profile.cv}
               download
               className="inline-flex items-center gap-2 rounded-full border border-line px-6 py-3 font-medium text-fg transition hover:border-fg/40"
             >
-              <Download size={18} /> {t.downloadCv}
+              <Download size={18} /> {t('hero.downloadCv')}
             </a>
           )}
           <div className="flex items-center gap-2">
-            <a href={data.socials.github} target="_blank" rel="noreferrer" aria-label="GitHub" className={iconBtn}>
-              <GithubIcon className="h-5 w-5" />
-            </a>
-            <a href={data.socials.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className={iconBtn}>
-              <LinkedinIcon className="h-5 w-5" />
-            </a>
+            <SocialLinks linkClassName="rounded-full border border-line p-3 text-muted transition hover:border-fg/30 hover:text-fg" />
           </div>
         </div>
       </div>
 
-      <a href="#about" aria-label={t.scrollDown}
+      <a href={`#${sections[0].id}`} aria-label={t('hero.scrollDown')}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-subtle hover:text-fg">
         <ArrowDown size={20} />
       </a>

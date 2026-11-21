@@ -1,25 +1,36 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Menu, Moon, Sun, X } from 'lucide-react'
-import { useSettings } from '../settings'
+import { profile } from '../data/profile'
+import { languages, setLanguage } from '../i18n'
+import { sections } from '../sections'
+import { useTheme } from '../hooks/useTheme'
 
 function Toggles({ className = '' }) {
-  const { theme, toggleTheme, lang, toggleLang, t } = useSettings()
+  const { t, i18n } = useTranslation()
+  const { theme, toggleTheme } = useTheme()
+  const current = i18n.resolvedLanguage
+  const next = languages[(languages.indexOf(current) + 1) % languages.length]
+
   return (
     <div className={`flex items-center gap-1 rounded-full border border-line p-1 ${className}`}>
       <button
-        onClick={toggleLang}
-        aria-label={t.switchLang}
-        title={t.switchLang}
-        className="flex h-8 items-center gap-1 rounded-full px-2.5 font-mono text-xs font-medium transition hover:bg-chip"
+        onClick={() => setLanguage(next)}
+        aria-label={t('settings.switchLang')}
+        title={t('settings.switchLang')}
+        className="flex h-8 items-center gap-1 rounded-full px-2.5 font-mono text-xs font-medium uppercase transition hover:bg-chip"
       >
-        <span className={lang === 'fr' ? 'text-fg' : 'text-subtle'}>FR</span>
-        <span className="text-subtle">/</span>
-        <span className={lang === 'en' ? 'text-fg' : 'text-subtle'}>EN</span>
+        {languages.map((lng, i) => (
+          <span key={lng} className="contents">
+            {i > 0 && <span className="text-subtle">/</span>}
+            <span className={lng === current ? 'text-fg' : 'text-subtle'}>{lng}</span>
+          </span>
+        ))}
       </button>
       <button
         onClick={toggleTheme}
-        aria-label={theme === 'dark' ? t.toLight : t.toDark}
-        title={theme === 'dark' ? t.toLight : t.toDark}
+        aria-label={theme === 'dark' ? t('settings.toLight') : t('settings.toDark')}
+        title={theme === 'dark' ? t('settings.toLight') : t('settings.toDark')}
         className="flex h-8 w-8 items-center justify-center rounded-full text-muted transition hover:bg-chip hover:text-fg"
       >
         {theme === 'dark' ? <Sun size={16} /> : <Moon size={16} />}
@@ -28,8 +39,15 @@ function Toggles({ className = '' }) {
   )
 }
 
+const initials = profile.name
+  .split(' ')
+  .filter((_, i, a) => i === 0 || i === a.length - 1)
+  .map((w) => w[0])
+  .join('')
+  .toUpperCase()
+
 export default function Navbar() {
-  const { data, t } = useSettings()
+  const { t } = useTranslation()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -40,14 +58,7 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  const links = Object.entries(t.nav).map(([id, label]) => ({ href: `#${id}`, label }))
-
-  const initials = data.name
-    .split(' ')
-    .filter((_, i, a) => i === 0 || i === a.length - 1)
-    .map((w) => w[0])
-    .join('')
-    .toUpperCase()
+  const links = sections.map(({ id }) => ({ href: `#${id}`, label: t(`nav.${id}`) }))
 
   return (
     <header
@@ -77,12 +88,12 @@ export default function Navbar() {
             href="#contact"
             className="hidden rounded-full bg-fg px-4 py-2 text-sm font-medium text-bg transition hover:bg-accent hover:text-ink lg:inline-block"
           >
-            {t.contactMe}
+            {t('nav.contactMe')}
           </a>
           <button
             className="text-fg lg:hidden"
             onClick={() => setOpen((o) => !o)}
-            aria-label={open ? t.closeMenu : t.openMenu}
+            aria-label={open ? t('nav.closeMenu') : t('nav.openMenu')}
             aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}

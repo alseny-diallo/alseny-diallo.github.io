@@ -1,15 +1,15 @@
 @import "tailwindcss";
 
-/* Le mode sombre s'active avec la classe .dark sur <html> */
+/* Dark mode is enabled by the .dark class on <html> */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* Couleurs du thème : elles changent automatiquement entre clair et sombre */
+/* Theme colours: :root is the light theme, .dark overrides them */
 :root {
   --bg: #f7f7f2;
-  --fg: #0c0c12;        /* titres */
-  --text: #3f3f46;      /* texte principal */
-  --muted: #52525b;     /* texte secondaire */
-  --subtle: #71717a;    /* petites infos */
+  --fg: #0c0c12;        /* headings */
+  --text: #3f3f46;      /* body text */
+  --muted: #52525b;     /* secondary text */
+  --subtle: #71717a;    /* small print */
   --line: rgb(12 12 18 / 0.1);
   --card: rgb(255 255 255 / 0.7);
   --chip: rgb(12 12 18 / 0.04);
@@ -61,7 +61,7 @@ body {
   @apply bg-accent text-ink;
 }
 
-/* Grille de fond subtile */
+/* Subtle background grid */
 .bg-grid {
   background-image:
     linear-gradient(to right, var(--grid) 1px, transparent 1px),
@@ -70,7 +70,7 @@ body {
   mask-image: radial-gradient(ellipse at top, black 30%, transparent 75%);
 }
 
-/* Apparition au scroll */
+/* Reveal on scroll */
 .reveal {
   opacity: 0;
   transform: translateY(24px);
